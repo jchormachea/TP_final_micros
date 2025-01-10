@@ -3,7 +3,7 @@
  @brief    statusLed for .c file
  @author   Conradeus
  ******************************************************************************/
-
+/*Esto es para el led de status, ese que tiene que titilar si falla la comunicacion*/
 /*******************************************************************************
  * INCLUDE HEADER FILES
  ******************************************************************************/

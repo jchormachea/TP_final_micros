@@ -8,6 +8,9 @@
  * INCLUDE HEADER FILES
  ******************************************************************************/
 #include "spi.h"
+#include "hardware.h"
+#include "board.h"
+#include "gpio.h"
 
 /*******************************************************************************
  * CONSTANT AND MACRO DEFINITIONS USING #DEFINE
@@ -36,7 +39,26 @@
  GLOBAL FUNCTION DEFINITIONS
  *******************************************************************************
  ******************************************************************************/
+void spi_init(void){
 
+    P2DIR |= PIN_SPI_MOSI + PIN_SPI_CLK; // Configurar MOSI y CLK como salida
+    //P2DIR &= ~PIN_SPI_MISO; // not used
+    P2OUT &= ~(PIN_SPI_MOSI + PIN_SPI_CLK); // Inicializar líneas en bajo
+
+}
+
+void spi_write(unsigned char data) {
+    for (int i = 0; i < 8; i++) {
+        if (data & 0x80) {  // Enviar bit más significativo
+            P2OUT |= PIN_SPI_MOSI;
+        } else {
+            P2OUT &= ~PIN_SPI_MOSI;
+        }
+        P2OUT |= PIN_SPI_CLK;  // Generar pulso de reloj
+        P2OUT &= ~PIN_SPI_CLK;
+        data <<= 1;          // Desplazar siguiente bit
+    }
+}
 
 /*******************************************************************************
  LOCAL FUNCTION DEFINITIONS

@@ -4,6 +4,10 @@
  @author   Conradeus
  ******************************************************************************/
 
+/*Este archivo es para armar la comunicacion con la computadora. La comunicacion es
+por uart. Hay que ver de hacer funciones para enviar y transmitir datos, y leerlas
+con una interfaz de matlab. Hay que ver como hacer que sea robusta y no pierda datos*/
+
 /*******************************************************************************
  * INCLUDE HEADER FILES
  ******************************************************************************/

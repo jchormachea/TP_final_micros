@@ -4,11 +4,15 @@
  @author   Conradeus
  ******************************************************************************/
 
+/*En este archivo hay que hacer funciones para recibir el valor de temperatura, y 
+despues con una escala definida convenientemente prender los 8 leds en funcion de
+que tan cerca estamos del fondo de escala. Esto se hace con el shift register*/
+
 /*******************************************************************************
  * INCLUDE HEADER FILES
  ******************************************************************************/
 #include "barraLed.h"
-#include "gpio.h"
+#include "spi.h"
 /*******************************************************************************
  * CONSTANT AND MACRO DEFINITIONS USING #DEFINE
  ******************************************************************************/

@@ -3,6 +3,9 @@
  @brief    i2c for .c file
  @author   Conradeus
  ******************************************************************************/
+/*programar i2c con el USCIB. hacer funciones parecidas a las del onewire
+(una de inicializar, una de leer, una de escribir y no se si alguna más por el
+tipo de protocolo, como reset))*/
 
 /*******************************************************************************
  * INCLUDE HEADER FILES

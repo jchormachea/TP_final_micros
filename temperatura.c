@@ -58,9 +58,9 @@ uint16_t readTemperatura(void){
     temp_lsb = oneWire_singleRead();
     temp_msb = oneWire_singleRead();
 
-    temp_read = (temp_msb << 8) | temp_lsb;
+    temp_read = (temp_msb << 8) | temp_lsb; //dato del sensor en escala de 0.0625°C(ver datasheet)
 
-    return convert(temp_read);
+    return convert(temp_read);//convierto a 4 cifras. 0445 es 44.5°C
 
 }
 
